@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const chalk = require("ansi-colors");
 const bodyParser = require("body-parser");
+const expressHBS = require("express-handlebars");
 
 /** Routing Imports */
 const indexRoutes = require("./routes/index");
@@ -25,8 +26,12 @@ const obj = {
  * @param {*} elem 
  */
 function parsingTemplate(elem){
-    app.set("view engine",obj[elem]);
-    app.set("views", path.join(__dirname, `views/${obj[elem]}`));
+    // for setting handle bars
+    if(elem === "2")
+        app.engine("handlebars",expressHBS.engine({ layoutsDir:"views/handlebars/layouts" ,defaultLayout:"layout",extname:"handlebars"}))                 
+        
+    app.set("view engine",obj[elem])     
+    app.set("views",  `views/${obj[elem]}`);
 }
 
 //Set view engine name and template directory path

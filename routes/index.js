@@ -7,7 +7,8 @@ const feedBackArray = [];
 /** For Dynamic Content */
 const renderingOptions = {
     title:"index",
-    feedback:feedBackArray
+    feedback:feedBackArray,
+    hasFeedback:false
 }
 
 router.get("/",(req,res) => {
@@ -17,6 +18,7 @@ router.get("/",(req,res) => {
 router.post("/",(req,res) => {
     const { name,email,message } = req.body;
     feedBackArray.push({name,email,message});
+    renderingOptions.hasFeedback = true;
     res.redirect("/");
 })
 

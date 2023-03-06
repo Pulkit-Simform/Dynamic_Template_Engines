@@ -1,0 +1,14 @@
+<section class="text-gray-600 body-font">    
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+        {{#each galleryData}}
+            <div class="p-4 w-full border m-1 lg:w-1/4 md:w-1/2"><a class="block relative h-48 rounded overflow-hidden"></a><img class="object-cover object-center w-auto h-auto block" alt="ecommerce" src="{{this.image}}"/>
+                <div class="mt-4"></div>
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{this.category}}</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">{{this.name}}</h2>
+                <p class="mt-1">{{this.price}}</p>
+            </div>
+        {{/each}}
+    </div>
+  </div>
+</section>
