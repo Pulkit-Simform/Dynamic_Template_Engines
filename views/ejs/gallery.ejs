@@ -1,0 +1,68 @@
+<%- include('layouts/header') %>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <h1 class="text-4xl mb-5 text-black mx-auto text-center">Statistics</h1>
+            <div class="flex flex-wrap -m-4 text-center mt-3">
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+                        <%= stat.total%>
+                    </h2>
+                    <p class="leading-relaxed">Total</p>
+                </div>
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+                        <%= stat.max%>
+                    </h2>
+                    <p class="leading-relaxed">High Price</p>
+                </div>
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+                        <%= stat.min%>
+                    </h2>
+                    <p class="leading-relaxed">Low Price</p>
+                </div>
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+                        <%= stat.best_genre%>
+                    </h2>
+                    <p class="leading-relaxed">Best Genre</p>
+                </div>
+
+                <% for( let [key,value] of genreMap ) { %>
+                    <div class="p-4 sm:w-1/4 w-1/2">
+                        <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">
+                            <%= value %>
+                        </h2>
+                        <p class="leading-relaxed"><%= key %></p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+                <% for(let gallery of galleryData) { %>
+                    <div class="p-4 w-full border m-1 lg:w-1/4 md:w-1/2"><a
+                            class="block relative h-48 rounded overflow-hidden"></a><img
+                            class="object-cover object-center w-auto h-auto block" alt="ecommerce"
+                            src="<%= gallery.image %>" />
+                        <div class="mt-4"></div>
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <%= gallery.category %>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium">
+                            <%= gallery.name %>
+                        </h2>
+                        <p class="mt-1">
+                            <%= gallery.price %>
+                        </p>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </section>
+
+    <%- include('layouts/footer') %>
