@@ -1,0 +1,63 @@
+extends layouts/layout.pug
+
+block content
+    section.text-gray-600.body-font
+      .container.px-5.py-24.mx-auto
+        .flex.flex-wrap.-m-4
+            each gallery in galleryData
+                .p-4.w-full.border.m-1(class='lg:w-1/4 md:w-1/2')
+                    a.block.relative.h-48.rounded.overflow-hidden
+                    img.object-cover.object-center.w-auto.h-auto.block(alt='ecommerce', src= gallery.image)
+                    .mt-4
+                    h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 #{gallery.category}
+                    h2.text-gray-900.title-font.text-lg.font-medium #{gallery.name}
+                    p.mt-1 #{gallery.price}
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/421x261')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium Shooting Stars
+        //-       p.mt-1 $21.15
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/422x262')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium Neptune
+        //-       p.mt-1 $12.00
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/423x263')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium The 400 Blows
+        //-       p.mt-1 $18.40
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/424x264')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium The Catalyzer
+        //-       p.mt-1 $16.00
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/425x265')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium Shooting Stars
+        //-       p.mt-1 $21.15
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/427x267')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium Neptune
+        //-       p.mt-1 $12.00
+        //-   .p-4.w-full(class='lg:w-1/4 md:w-1/2')
+        //-     a.block.relative.h-48.rounded.overflow-hidden
+        //-       img.object-cover.object-center.w-full.h-full.block(alt='ecommerce', src='https://dummyimage.com/428x268')
+        //-     .mt-4
+        //-       h3.text-gray-500.text-xs.tracking-widest.title-font.mb-1 CATEGORY
+        //-       h2.text-gray-900.title-font.text-lg.font-medium The 400 Blows
+        //-       p.mt-1 $18.40
